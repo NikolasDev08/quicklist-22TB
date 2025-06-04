@@ -36,26 +36,26 @@ header {
   align-items: start;
 
   img {
-      width: 15.4rem;
-      margin-inline: auto;
-      margin-bottom: 3rem;
+    width: 15.4rem;
+    margin-inline: auto;
+    margin-bottom: 3rem;
   }
 
-button {
-  border: none;
-  background: none;
-  font-size: 1.4rem;
-  line-height: 1.6rem;
-  font-weight: 500;
-  margin-bottom: 1.6rem;
-  color: var(--color-brand);
-  cursor: pointer;
-}
+  button {
+    border: none;
+    background: none;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    font-weight: 500;
+    margin-bottom: 1.6rem;
+    color: var(--color-brand);
+    cursor: pointer;
+  }
 
-h1 {
-  font-size: 2.4rem;
-  color: var(--content-primary);
-  line-height: 3.2rem;
+  h1 {
+    font-size: 2.4rem;
+    color: var(--content-primary);
+    line-height: 3.2rem;
   }
 }
 
@@ -67,27 +67,27 @@ main {
 .add-item {
   margin-bottom: 4rem;
 
-  input{
-      width: 100%;
-      padding: 1.2rem;
-      border: 2px solid var(--border-primary);
-      border-radius: 1.2rem;
-      margin-bottom: 1.5rem;
-      outline: none;
-      color: var(--content-primary);
-      
-      &::placeholder{
-          color: var(--content-tertiary);
-      }
+  input {
+    width: 100%;
+    padding: 1.2rem;
+    border: 2px solid var(--border-primary);
+    border-radius: 1.2rem;
+    margin-bottom: 1.5rem;
+    outline: none;
+    color: var(--content-primary);
 
-      &:hover{
-          border: 2px solid var(--border-hover);
-      }
-
-      &:focus{
-          border: 2px solid var(--color-brand)
+    &::placeholder {
+      color: var(--content-tertiary);
     }
-}
+
+    &:hover {
+      border: 2px solid var(--border-hover);
+    }
+
+    &:focus {
+      border: 2px solid var(--color-brand)
+    }
+  }
 
   button {
     background: var(--color-brand);
@@ -102,29 +102,58 @@ main {
     cursor: pointer;
 
     &:hover {
-        background: var(--color-brand-hover);
+      background: var(--color-brand-hover);
     }
   }
 }
 
 .list {
   .item {
-      background: var(--background-secondary);
-      padding: 1.2rem;
-      margin-bottom: 1.2rem;
+    background: var(--background-secondary);
+    padding: 1.2rem;
+    margin-bottom: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    font-weight: 500;
+    border-radius: 1.2rem;
+    box-shadow: 0 2px 6px rgba(8, 11, 18, 0.2);
+
+    div {
       display: flex;
-      justify-content: space-between;
+      gap: 1.2rem;
       align-items: center;
-      font-size: 1.6rem;
-      line-height: 2.4rem;
-      font-weight: 500;
-      border-radius: 1.2rem;
-      box-shadow: 0 2px 6px rgba(8, 11, 18, 0.2);
-      
-      div {
-          display: flex;
-          gap: 1.2rem;
-          align-items: center;
+    }
+
+    input {
+      display: none;
+
+    }
+
+    .custom-checkbox {
+      width: 1.6rem;
+      height: 1.6rem;
+      border: 1px solid var(--border-primary);
+      border-radius: 0.6rem;
+      cursor: pointer;
+    }
+
+    label {
+      cursor: pointer;
+    }
+
+    div:has(input:checked) {
+      .custom-checkbox {
+        background: var(--color-brand);
+        border: 1px solid var(--color-brand);
+        transition: background .2s ease;
+      }
+
+      label {
+        text-decoration: line-through;
+      }
     }
   }
-}   
+}
