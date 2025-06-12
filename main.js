@@ -3,8 +3,10 @@ const items = []
 function addItem() {
     const itemName = document.querySelector("#item").value
 
+    console.log(itemName)
+
     const item = {
-        nome: itemName,
+        name: itemName,
         checked: false
     }
 
@@ -60,3 +62,14 @@ function removeItem(itemName) {
 function addHideWarningClass(){
     document.querySelector(".warning").classList.add("hide-warning")
 }
+
+function verifyLocalStorage(){
+ const localStorageItems = localStorage.getItem("items")
+
+ if(localStorageItems){
+   items = JSON.parse(localStorageItems)
+   showItemsList()
+ }
+}
+
+verifyLocalStorage()
