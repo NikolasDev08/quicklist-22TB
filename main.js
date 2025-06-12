@@ -1,4 +1,4 @@
-let items = []
+const items = []
 
 function addItem() {
     const itemName = document.querySelector("#item").value
@@ -55,4 +55,8 @@ function removeItem(itemName) {
     }
 
     showItemsList()
+}
+
+function addHideWarningClass(){
+    document.querySelector(".warning").classList.add("hide-warning")
 }
